@@ -141,6 +141,7 @@ public class Main {
 		lineborderPanel4.setLayout(null);
 		
 		InsertMdName = new JTextField();
+		InsertMdName.setHorizontalAlignment(SwingConstants.CENTER);
 		InsertMdName.setBounds(50, 50, 1100, 100);
 		lineborderPanel4.add(InsertMdName);
 		InsertMdName.setColumns(10);
@@ -154,6 +155,7 @@ public class Main {
 		InsertMdName.setFont(BlackBrutal);
 		
 		InsertWordEn01 = new JTextField();
+		InsertWordEn01.setHorizontalAlignment(SwingConstants.CENTER);
 		InsertWordEn01.setBounds(50, 200, 500, 100);
 		lineborderPanel4.add(InsertWordEn01);
 		InsertWordEn01.setColumns(10);
@@ -167,6 +169,7 @@ public class Main {
 		InsertWordEn01.setFont(BlackBrutal);
 		
 		InsertWordEn02 = new JTextField();
+		InsertWordEn02.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		InsertWordEn02.setColumns(10);
 		InsertWordEn02.setBounds(50, 350, 500, 100);
@@ -181,6 +184,7 @@ public class Main {
 		InsertWordEn02.setFont(BlackBrutal);
 		
 		InsertWordEn03 = new JTextField();
+		InsertWordEn03.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		InsertWordEn03.setColumns(10);
 		InsertWordEn03.setBounds(50, 500, 500, 100);
@@ -195,6 +199,7 @@ public class Main {
 		InsertWordEn03.setFont(BlackBrutal);
 		
 		InsertWordEn04 = new JTextField();
+		InsertWordEn04.setHorizontalAlignment(SwingConstants.CENTER);
 		InsertWordEn04.setColumns(10);
 		InsertWordEn04.setBounds(50, 650, 500, 100);
 		lineborderPanel4.add(InsertWordEn04);
@@ -208,6 +213,7 @@ public class Main {
 		InsertWordEn04.setFont(BlackBrutal);
 		
 		InsertWordKo01 = new JTextField();
+		InsertWordKo01.setHorizontalAlignment(SwingConstants.CENTER);
 		InsertWordKo01.setColumns(10);
 		InsertWordKo01.setBounds(650, 350, 500, 100);
 		lineborderPanel4.add(InsertWordKo01);
@@ -221,6 +227,7 @@ public class Main {
 		InsertWordKo01.setFont(BlackBrutal);
 		
 		InsertWordKo02 = new JTextField();
+		InsertWordKo02.setHorizontalAlignment(SwingConstants.CENTER);
 		InsertWordKo02.setColumns(10);
 		InsertWordKo02.setBounds(650, 500, 500, 100);
 		lineborderPanel4.add(InsertWordKo02);
@@ -234,6 +241,7 @@ public class Main {
 		InsertWordKo02.setFont(BlackBrutal);
 		
 		InsertWordKo03 = new JTextField();
+		InsertWordKo03.setHorizontalAlignment(SwingConstants.CENTER);
 		InsertWordKo03.setColumns(10);
 		InsertWordKo03.setBounds(650, 650, 500, 100);
 		lineborderPanel4.add(InsertWordKo03);
@@ -247,6 +255,7 @@ public class Main {
 		InsertWordKo03.setFont(BlackBrutal);
 		
 		InsertWordKo00 = new JTextField();
+		InsertWordKo00.setHorizontalAlignment(SwingConstants.CENTER);
 		InsertWordKo00.setColumns(10);
 		InsertWordKo00.setBounds(650, 200, 500, 100);
 		lineborderPanel4.add(InsertWordKo00);
