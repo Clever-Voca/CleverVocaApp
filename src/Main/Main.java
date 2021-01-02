@@ -167,6 +167,7 @@ public class Main {
 		InsertWordEn01.setFont(BlackBrutal);
 		
 		InsertWordEn02 = new JTextField();
+		
 		InsertWordEn02.setColumns(10);
 		InsertWordEn02.setBounds(50, 350, 500, 100);
 		lineborderPanel4.add(InsertWordEn02);
@@ -180,6 +181,7 @@ public class Main {
 		InsertWordEn02.setFont(BlackBrutal);
 		
 		InsertWordEn03 = new JTextField();
+		
 		InsertWordEn03.setColumns(10);
 		InsertWordEn03.setBounds(50, 500, 500, 100);
 		lineborderPanel4.add(InsertWordEn03);
