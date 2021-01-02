@@ -125,7 +125,7 @@ public class Main {
 		JPanel lineborderPanel1 = new JPanel();
 		lineborderPanel1.setBorder(new LineBorder(Color.LIGHT_GRAY, 10, true));
 		lineborderPanel1.setBounds(290, 290, 1370, 700);
-		WriteTestPage.add(lineborderPanel1);
+		WriteTestPage.add(lineborderPanel1);    
 		lineborderPanel1.setLayout(null);  
 
 		JPanel lineborderPanel3 = new JPanel();
