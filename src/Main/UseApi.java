@@ -17,7 +17,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.StringJoiner;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -44,14 +43,12 @@ public class UseApi {
 	UseApi(){
 		this.URL = GetBE.getUrl("./BE.txt");
 	}
-	JSONArray searchModule(String q) throws IOException {
-		String reqURL = this.URL + "/search/" + q;
-		System.out.println(reqURL);
+	JSONObject searchModule(String q) throws IOException, org.json.simple.parser.ParseException {
+		String reqURL = this.URL + "/search/" + URLEncoder.encode(q, "utf-8");
 		HttpURLConnection con = getCon("GET", reqURL);
 		
 		int responseCode = con.getResponseCode();
 		
-		System.out.println(responseCode);
 		if (responseCode == HttpURLConnection.HTTP_OK) { // success
 			BufferedReader in = new BufferedReader(new InputStreamReader(
 					con.getInputStream()));
@@ -65,20 +62,16 @@ public class UseApi {
 			
 			
 			JSONParser p = new JSONParser();
-			JSONArray obj = null;
+			JSONObject obj = null;
 			
-			try {
-				obj = (JSONArray)p.parse(response.toString());
-			} catch (org.json.simple.parser.ParseException e) {
-				e.printStackTrace();
-			}
 			
+			obj = (JSONObject)p.parse(response.toString());
 			return obj;
 		} else {
 			System.out.println("GET request not worked");
 			return null;
 		}
-		
+	
 		
 		
 	}
@@ -179,7 +172,7 @@ public class UseApi {
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 		con.setRequestMethod(method);
 		con.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36");
-		con.setRequestProperty("Content-Type", "application/x-www-from-urlencoded; charset=UTF-8");
+		//con.setRequestProperty("Content-Type", "application/x-www-from-urlencoded; charset=UTF-8");
 		con.setRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
 		con.setRequestProperty("Accept-Encoding", "gzip, deflate, br");
 		con.setRequestProperty("Accept-Language", "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7");

@@ -2,7 +2,6 @@ package Main;
 
 import java.io.IOException;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
@@ -12,7 +11,7 @@ public class Test {
 		UseApi testCode = new UseApi();
 		JSONObject some = testCode.getModule(1);
 		System.out.println(some.toJSONString());
-		JSONArray some2 = testCode.searchModule("토익");
+		JSONObject some2 = testCode.searchModule("토익");
 		System.out.println(some2.toJSONString());
 	}
 
