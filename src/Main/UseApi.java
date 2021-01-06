@@ -113,27 +113,24 @@ public class UseApi {
 		con.setDoOutput(true);
 		
 		Map<String, Object> arg = new HashMap<>();
-		arg.put("module_name", moduleName);
-		arg.put("publisher", publisher);
+		arg.put("\"module_name\"", "\"" + moduleName + "\"");
+		arg.put("\"publisher\"", "\"" + publisher + "\"");
 		ArrayList<Map<String, String>> wordList = new ArrayList<>();
 		for(Map<String, String> word : words) {
 			Map<String, String> subArg = new HashMap<>();
-			subArg.put("word", word.get("word"));
-			subArg.put("mean", word.get("mean"));
+			subArg.put("\"word\"", "\"" + word.get("word") + "\"");
+			subArg.put("\"mean\"", "\"" + word.get("mean") + "\"");
 			wordList.add(subArg);
 		}
-		arg.put("word", wordList);
+		arg.put("\"word\"", wordList);
 		
-		StringJoiner sj = new StringJoiner("&");
-		for(Entry<String, Object> entry : arg.entrySet()) {
-			sj.add(URLEncoder.encode(entry.getKey(), "UTF-8") + "=" + URLEncoder.encode((String)entry.getValue(), "UTF-8"));
-		}
+		String reqData = arg.toString().replaceAll("=", ":");
 		
-		byte[] out = sj.toString().getBytes(StandardCharsets.UTF_8);
+		byte[] out = reqData .getBytes(StandardCharsets.UTF_8);
 		int length = out.length;
 		
 		con.setFixedLengthStreamingMode(length);
-		
+		con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 		con.connect();
 		try(OutputStream os = con.getOutputStream()){
 			os.write(out);
